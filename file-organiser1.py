@@ -1,6 +1,6 @@
 import shutil, os
 
-root = 'C:\\Users\\Raisa Arief\\Desktop\\SEMICOLON\\Software dev\\Sample folder'
+root = 'C:\\'
 if not os.path.exists(root + '\\Images'):
     os.makedirs(root + '\\Images')
 if not os.path.exists(root + '\\Videos'):
