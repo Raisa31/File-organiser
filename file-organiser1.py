@@ -1,6 +1,6 @@
 import shutil, os
 
-root = 'C:'
+root = 'C:\\User'
 if not os.path.exists(root + '\\Images'):
     os.makedirs(root + '\\Images')
 if not os.path.exists(root + '\\Videos'):
