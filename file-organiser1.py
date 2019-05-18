@@ -7,25 +7,26 @@ if not os.path.exists(root + '\\Videos'):
     os.makedirs(root + '\\Videos')
 if not os.path.exists(root + '\\Text'):
     os.makedirs(root + '\\Text')
-if not os.path.exists(root + '\\Office'):
-    os.makedirs(root + '\\Office')
-    
+
+img = ['.JPG', '.JPEG', '.PNG', '.jpg', '.jpeg']
+vid = ['.MP4', '.mkv', '.MOV']
+txt = ['.rtf', '.txt', '.doc', '.docx', '.ppt', '.pptx', '.xlsx', '.xls', '.pdf']
+
+try:
+    for folders, subfolders, filenames in os.walk(root):
+        for filename in filenames :
+            for i in img:
+                if filename.endswith(i):
+                    shutil.move(root + '\\' + filename, root + '\\Images')
+            for j in vid:
+                if filename.endswith(j):
+                    shutil.move(root + '\\' + filename, root + '\\Videos')
+            for k in txt:
+                if filename.endswith(k):
+                     shutil.move(root + '\\' + filename, root + '\\Text')        
+
+except:
+    None
 
 
-for filename in os.listdir(root):
-    if filename.endswith('.txt'): 
-        shutil.move(root + '\\' + filename, root + '\\Text')
-    if filename.endswith('.rtf') or filename.endswith('.docx') or filename.endswith('.doc') or filename.endswith('.pptx') or filename.endswith('.xlsx'):
-        shutil.move(root + '\\' + filename, root + '\\Office')
-    if filename.endswith('.JPG') or filename.endswith('JPEG') or filename.endswith('PNG'):
-        shutil.move(root + '\\' + filename, root + '\\Images')
-    if filename.endswith('.MP4') or filename.endswith('mkv') or filename.endswith('MOV'):
-        shutil.move(root + '\\' + filename, root + '\\Videos')
-
-
-'''
-for filename in os.listdir('C:\\Users\\Raisa Arief\\Desktop\\SEMICOLON\\Software dev\\Sample folder'):
-    if filename.charAt(0) == 'a'
-        shutil.move('C:\\Users\\Raisa Arief\\Desktop\\SEMICOLON\\Software dev\\Sample folder\\' + filename, 'C:\\Users\\Raisa Arief\\Desktop\\SEMICOLON\\Software dev\\Sample folder\\Text')
-'''
 
